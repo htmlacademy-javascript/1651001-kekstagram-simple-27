@@ -1,3 +1,5 @@
+import {getRandomInteger, getRandomArrayElement} from './util.js';
+
 const ITEMS_AMOUNT = 25;
 const DESCRIPTIONS = [
   'According to all known laws of aviation',
@@ -17,5 +19,17 @@ const COMMENTS_AMOUNT = {
   min: 0,
   max: 200
 };
+//Создание объекта:
+const generatePhoto = (index) => ({
+  id: index + 1,
+  url: `photos/${index + 1}.jpg`,
+  description: getRandomArrayElement(DESCRIPTIONS),
+  likes: getRandomInteger(LIKES_AMOUNT.min, LIKES_AMOUNT.max),
+  comments: getRandomInteger(COMMENTS_AMOUNT.min, COMMENTS_AMOUNT.max)
+});
+//Создание массива с объектами:
+const generatedPhotos = Array.from({
+  length: ITEMS_AMOUNT
+}, (_value, index) => generatePhoto(index));
 
-export{ITEMS_AMOUNT, DESCRIPTIONS, LIKES_AMOUNT, COMMENTS_AMOUNT};
+export {generatedPhotos};
