@@ -14,4 +14,7 @@ const getRandomArrayElement = (elements) => elements[getRandomInteger(0, element
 const checkStringLength = (string, Length) => string.length <= Length;
 //console.log(checkStringLength('What happened to Gul\'dan after Illidan took his cane? He fell.', 69));
 
-export {getRandomInteger, getRandomArrayElement, checkStringLength};
+const isEscapeKey = (evt) => evt.key === 'Escape';
+const isEnterKey = (evt) => evt.key === 'Enter';
+
+export {getRandomInteger, getRandomArrayElement, checkStringLength, isEscapeKey, isEnterKey};
