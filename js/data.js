@@ -11,6 +11,9 @@ const DESCRIPTIONS = [
   'Ooh, black and yellow!',
   'Let\'s shake it up a little.'
 ];
+const MIN_DESCR_LENGTH = 20;
+const MAX_DESCR_LENGTH = 140;
+
 const LIKES_AMOUNT = {
   min: 15,
   max: 200
@@ -32,4 +35,4 @@ const generatedPhotos = Array.from({
   length: ITEMS_AMOUNT
 }, (_value, index) => generatePhoto(index));
 
-export {generatedPhotos};
+export {generatedPhotos, MAX_DESCR_LENGTH, MIN_DESCR_LENGTH};
