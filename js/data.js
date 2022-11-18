@@ -35,6 +35,7 @@ const generatedPhotos = Array.from({
   length: ITEMS_AMOUNT
 }, (_value, index) => generatePhoto(index));
 
+//Настройки фильтов:
 const EFFECTS = [
   {
     name: 'chrome',
