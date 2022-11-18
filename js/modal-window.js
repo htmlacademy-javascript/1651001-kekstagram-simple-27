@@ -1,4 +1,6 @@
 import {isEscapeKey, isEnterKey} from './util.js';
+import {resetScale} from './img-scale.js';
+import {resetEffects} from './img-filters.js';
 
 const body = document.querySelector('body');
 const uploadUserPhoto = document.querySelector('#upload-file');
@@ -12,11 +14,11 @@ const onPopupEscapeDown = (evt) => {
   }
 };
 
-export function openUserModal() {
+function openUserModal() {
   modalWindow.classList.remove('hidden');
   body.classList.add('modal-open');
   document.addEventListener('keydown', onPopupEscapeDown);
-};
+}
 
 uploadUserPhoto.addEventListener('change', () => {
   openUserModal();
@@ -29,6 +31,8 @@ uploadUserPhoto.addEventListener('change', (evt) => {
 });
 
 function closeUserModal() {
+  resetScale();
+  resetEffects();
   modalWindow.classList.add('hidden');
   body.classList.remove('modal-open');
   document.removeEventListener('keydown', onPopupEscapeDown);
