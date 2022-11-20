@@ -1,4 +1,5 @@
-import {MAX_DESCR_LENGTH, MIN_DESCR_LENGTH} from './data.js';
+const MIN_DESCR_LENGTH = 20;
+const MAX_DESCR_LENGTH = 140;
 
 const form = document.querySelector('.img-upload__form');
 
@@ -18,3 +19,6 @@ form.addEventListener('submit', (evt) => {
     evt.preventDefault();
   }
 });
+
+
+export {pristine};
