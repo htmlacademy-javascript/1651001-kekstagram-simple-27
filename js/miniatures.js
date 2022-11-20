@@ -1,21 +1,15 @@
-import {generatedPhotos} from './data.js';
+const pictureContainer = document.querySelector('.pictures');
+const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
-const miniatures = document.querySelector('.pictures');
-
-const miniatureTemplate = document.querySelector('#picture')
-  .content
-  .querySelector('.picture');
-
-const renderMiniature = () => {
-  const similarListFragment = document.createDocumentFragment();
-  generatedPhotos.forEach(({url, likes, comments}) => {
-    const miniatureElement = miniatureTemplate.cloneNode(true);
-    miniatureElement.querySelector('.picture__img').src = url;
-    miniatureElement.querySelector('.picture__likes').textContent = likes;
-    miniatureElement.querySelector('.picture__comments').textContent = comments;
-    similarListFragment.appendChild(miniatureElement);
+const createMiniatures = (pictures) => {
+  pictures.forEach(({url, likes, comments}) => {
+    const pictureElement = pictureTemplate.cloneNode(true);
+    pictureElement.querySelector('.picture__img').src = url;
+    pictureElement.querySelector('.picture__likes').textContent = likes;
+    pictureElement.querySelector('.picture__comments').textContent = comments;
+    pictureContainer.append(pictureElement);
   });
-  miniatures.appendChild(similarListFragment);
 };
 
-export {renderMiniature};
+
+export {createMiniatures};
