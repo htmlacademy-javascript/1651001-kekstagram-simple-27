@@ -1,15 +1,21 @@
-const pictureContainer = document.querySelector('.pictures');
+const picturesWrapper = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
-const createMiniatures = (pictures) => {
-  pictures.forEach(({url, likes, comments}) => {
-    const pictureElement = pictureTemplate.cloneNode(true);
-    pictureElement.querySelector('.picture__img').src = url;
-    pictureElement.querySelector('.picture__likes').textContent = likes;
-    pictureElement.querySelector('.picture__comments').textContent = comments;
-    pictureContainer.append(pictureElement);
-  });
-};
+const createMiniatures = (galleryValue) => {
+  const pictureFragment = document.createDocumentFragment();
 
+  galleryValue.forEach((image) => {
+    const picture = pictureTemplate.cloneNode(true);
+    const pictureImage = picture.querySelector('.picture__img');
+    const pictureLikes = picture.querySelector('.picture__likes');
+    const pictureComments = picture.querySelector('.picture__comments');
+    pictureImage.src = image.url;
+    pictureLikes.textContent = image.likes;
+    pictureComments.textContent = image.comments;
+    pictureFragment.appendChild(picture);
+  });
+
+  picturesWrapper.appendChild(pictureFragment);
+};
 
 export {createMiniatures};
