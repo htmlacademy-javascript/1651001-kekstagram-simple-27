@@ -1,8 +1,8 @@
-const INPUT_DATA_URL = 'https://27.javascript.pages.academy/kekstagram-simple/data';
-const OUTPUT_DATA_URL = 'https://27.javascript.pages.academy/kekstagram-simple';
+const DATA_URL_INPUT = 'https://27.javascript.pages.academy/kekstagram-simple/data';
+const DATA_URL_OUTPUT = 'https://27.javascript.pages.academy/kekstagram-simple';
 
 const getImageData = (onSuccess, onFail) => {
-  fetch(INPUT_DATA_URL)
+  fetch(DATA_URL_INPUT)
     .then((response) => response.json())
     .then((data) => onSuccess(data))
     .catch(() => {
@@ -12,7 +12,7 @@ const getImageData = (onSuccess, onFail) => {
 
 const sendImageData = (onSuccess, onFail, body) => {
   fetch(
-    OUTPUT_DATA_URL,
+    DATA_URL_OUTPUT,
     {
       method: 'POST',
       body,

@@ -3,7 +3,7 @@ import {resetScale} from './img-scale.js';
 import {resetEffects} from './img-filters.js';
 import {sendImageData} from './api.js';
 import {createSuccessMessageUpload, createErrorMessageUpload} from './upload-alert.js';
-import {pristine} from './validation.js';
+import {validation} from './validation.js';
 
 const uploadUserPhoto = document.querySelector('#upload-file');
 const modalWindow = document.querySelector('.img-upload__overlay');
@@ -73,7 +73,7 @@ const setUserFormSubmit = (onSuccess) => {
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
     document.removeEventListener('keydown', onPopupEscKeydown);
-    const isValid = pristine.validate();
+    const isValid = validation.validate();
     if (isValid) {
       lockSubmitButton();
       sendImageData(
