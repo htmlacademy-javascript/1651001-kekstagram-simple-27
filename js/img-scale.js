@@ -1,13 +1,13 @@
+const DEFAULT_SCALE = 100;
+const MIN_SCALE = 25;
+const MAX_SCALE = 100;
+const SCALE_STEP = 25;
+
 const userModalWindow = document.querySelector('.img-upload__overlay');
 const scaleControlSmaller = document.querySelector('.scale__control--smaller');
 const scaleControlBigger = document.querySelector('.scale__control--bigger');
 const scaleControl = userModalWindow.querySelector('.scale__control--value');
 const imgUploadPreviewImg = document.querySelector('.img-upload__preview img');
-
-const DEFAULT_SCALE = 100;
-const MIN_SCALE = 25;
-const MAX_SCALE = 100;
-const SCALE_STEP = 25;
 
 let scaleControlValue = DEFAULT_SCALE;
 
