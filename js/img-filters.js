@@ -46,12 +46,14 @@ const EFFECTS = [
     step: 1,
   },
 ];
+
+const DEFAULT_EFFECT = EFFECTS[5];
+
 const imgUploadPreviewImg = document.querySelector('.img-upload__preview img');
 const form = document.querySelector('.img-upload__form');
 const sliderElement = document.querySelector('.effect-level__slider');
 const valueElement = document.querySelector('.effect-level__value');
 const sliderFieldset = document.querySelector('.img-upload__effect-level');
-const DEFAULT_EFFECT = EFFECTS[5];
 
 let chosenEffect = DEFAULT_EFFECT;
 
